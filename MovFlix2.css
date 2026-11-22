@@ -1,0 +1,367 @@
+/* إعدادات عامة وإعادة ضبط المتصفح */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* قسم الواجهة الرئيسية (Hero Section) */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: #141414;
+  overflow: hidden;
+  border-bottom: 8px solid #222;
+  display: flex;
+  flex-direction: column;
+}
+
+/* فيديو الخلفية + طبقة التعتيم */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 97%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 1;
+}
+
+.hero .navbar,
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* شريط التنقل العلوي */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 50px;
+}
+
+.logo {
+  color: #e50914;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.signin-btn {
+  background-color: #e50914;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.signin-btn:hover {
+  background-color: #f40612;
+}
+
+/* محتوى الواجهة الرئيسية */
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 75px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hero-content h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* نموذج البريد الإلكتروني السفلي */
+.cta-bottom {
+  flex: none;
+  padding: 0;
+  max-width: 650px;
+}
+
+.cta-bottom p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* نموذج البريد الإلكتروني (Email Form) */
+.email-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 650px;
+}
+
+.email-form input {
+  flex: 1;
+  padding: 18px 15px;
+  font-size: 1rem;
+  border: 1px solid #8c8c8c;
+  border-radius: 2px 0 0 2px;
+  outline: none;
+  color: #000;
+}
+
+.email-form button {
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  padding: 0 28px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 0 2px 2px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.email-form button:hover {
+  background-color: #f40612;
+}
+
+/* أقسام المميزات (Features Sections) */
+.feature-section {
+  border-bottom: 8px solid #222;
+  padding: 70px 45px;
+}
+
+.feature-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* عكس الترتيب للأقسام الزوجية */
+.feature-section.reverse .feature-container {
+  flex-direction: row-reverse;
+}
+
+.feature-text {
+  flex: 1;
+}
+
+.feature-text h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.feature-text p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.feature-media {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.feature-media video,
+.feature-media img {
+  width: auto;
+  max-width: 100%;
+  max-height: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+/* قسم الأسئلة الشائعة (FAQ Section) */
+.faq-section {
+  border-bottom: 8px solid #222;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.faq-list {
+  max-width: 815px;
+  margin: 0 auto 50px;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 8px;
+}
+
+.faq-question {
+  width: 100%;
+  background-color: #303030;
+  color: #fff;
+  padding: 22px 30px;
+  font-size: 1.6rem;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.faq-question:hover {
+  background-color: #404040;
+}
+
+.faq-question span {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.faq-answer {
+  background-color: #303030;
+  border-top: 1px solid #000;
+  padding: 24px 30px;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  display: none; /* تظهر عبر JavaScript بإضافة الكلاس active */
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* التذييل (Footer) */
+.footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 70px 45px 40px;
+  color: #737373;
+}
+
+.footer-top {
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.footer-links a {
+  color: #737373;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-country {
+  font-size: 0.85rem;
+}
+
+/* التجاوب مع الشاشات الصغيرة والمتوسطة (Responsive Design) */
+@media (max-width: 950px) {
+  .feature-container,
+  .feature-section.reverse .feature-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content h1,
+  .feature-text h2,
+  .faq-section h2 {
+    font-size: 2.4rem;
+  }
+
+  .feature-text p,
+  .faq-question,
+  .faq-answer {
+    font-size: 1.2rem;
+  }
+
+  .email-form {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .email-form input {
+    width: 100%;
+    border-radius: 2px;
+  }
+
+  .email-form button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 2px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 20px;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
